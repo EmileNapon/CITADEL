@@ -1,0 +1,41 @@
+<style>
+    .no-border tr {
+      border: none;
+    }
+  </style>
+  
+  <!-- Barre de navigation -->
+  <nav class="navbar navbar-dark bg-dark"></nav>
+  <nav class="navbar navbar-dark bg-dark"></nav>
+  <nav class="navbar navbar-dark bg-dark"></nav>
+  
+  <br/><br/>
+  <button 
+    class="btn btn-outline-secondary py-2 px-3 rounded-2" 
+    (click)="DonneesExpert()">
+    Traduire du français au mooré
+  </button>
+  
+  <div class="container">
+    <div *ngIf="afficherTableau" class="table-responsive">
+      
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSources" matSort class="table" style="border: none;">
+          <ng-container matColumnDef="french">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Français</th>
+            <td mat-cell *matCellDef="let row">{{row.french}}</td>
+          </ng-container>
+          <ng-container matColumnDef="moore">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Mooré</th>
+            <td mat-cell *matCellDef="let row">{{row.moore}}</td>            
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="['french', 'moore']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['french', 'moore']"></tr>
+        </table>
+        
+      </div>
+      <br/><br/>
+      <button (click)="exportToCSV()">Télécharger en CSV</button>
+    </div>
+  </div>
+  

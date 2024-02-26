@@ -1,0 +1,133 @@
+<div class="container">
+  <div class="card">
+  
+  <div class="form-container">
+    <div class="align">
+                         <p >French</p> 
+                         <p class="align1">Moore</p>
+    </div>
+  <div *ngFor="let form of myForms; let i = index">
+      <form [formGroup]="form">
+        <!-- Vos champs -->
+        <body class='b' >
+        <div class='ecart1'> 
+  
+  
+        
+        <div class="mb-3s" class="ecart2">
+          
+          <label for="french{{i}}" class="form-label"></label>
+          <textarea 
+                    class="custom-textarea"  
+                    id="french{{i}}" 
+                    rows="3"
+                    cols="100" 
+                    formControlName="french" 
+                    placeholder="Entrez du texte">
+          </textarea> 
+          
+          
+        </div>
+       
+        <div class='c'><br/><i class="fa fa-language  custom-icon  fa-2x" aria-hidden="true"></i></div>
+        <div>
+        <div class="mb-2" class="ecart2">
+          <label for="moore{{i}}" class="form-label"></label>
+          
+          <textarea 
+              class="custom-textarea"
+              id="moore{{i}}"
+              rows="3"
+              cols="100"
+              formControlName="moore" 
+              placeholder="Transcrire"
+              
+              > 
+          </textarea> 
+  
+            
+        </div> 
+        <p class="align11">
+        
+          <button (click)="playAudio(i)">
+            <i class="fa fa-volume-up custom-icon" aria-hidden="true"></i>
+          </button>
+   
+          <a (click)="startRecording(i)" class="btn" *ngIf="!audioEnregistrements[i]?.recording && afficherIconemicro[i] "><i class="fa fa-microphone custom-icon " aria-hidden="true"></i></a>
+          <a (click)="stopRecording(i)" class="btn" *ngIf="audioEnregistrements[i]?.recording && afficherIconemicro[i] "><i class="fa fa-microphone custom-icon " aria-hidden="true"></i></a>
+      
+          
+          <svg *ngIf="afficherIconeClavier[i]" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-keyboard-fill" viewBox="0 0 16 16"  (click)="toggleKeyboard()" >
+            <path d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm13 .25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM2.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 8.75v-.5A.25.25 0 0 0 2.75 8h-.5zM4 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 5 8.75v-.5A.25.25 0 0 0 4.75 8h-.5a.25.25 0 0 0-.25.25zM6.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 7 8.75v-.5A.25.25 0 0 0 6.75 8h-.5zM8 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 9 8.75v-.5A.25.25 0 0 0 8.75 8h-.5a.25.25 0 0 0-.25.25zM13.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm-3-2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-1.5zm.75 2.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM11.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zM9 6.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5A.25.25 0 0 0 9.75 6h-.5a.25.25 0 0 0-.25.25zM7.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 8 6.75v-.5A.25.25 0 0 0 7.75 6h-.5zM5 6.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 6 6.75v-.5A.25.25 0 0 0 5.75 6h-.5a.25.25 0 0 0-.25.25zM2.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5A.25.25 0 0 0 4 6.75v-.5A.25.25 0 0 0 3.75 6h-1.5zM2 10.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM4.25 10a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-5.5z"/>
+          </svg>
+          
+          </p>
+          
+        </div>
+  
+  
+        
+      </div> <hr style="width: 100%; border-width: 2px; border-style: outset; margin: 0px 0; padding: 0;">
+  
+  </body>
+  
+      </form>
+  
+    </div>
+  
+    <div class="keyboard">
+      
+      <app-keyboard (characterClicked)="onCharacterClicked($event)" ></app-keyboard>
+    </div>
+    <br/>
+  <div class='ecart1'>
+   
+    <div class='ecart2'><button type="button" (click)="ajouterFormulaire()" [disabled]="!formulaireValide(myForms.length - 1)">nouveau</button></div>
+    <div class='ecart2'> <button type="button" (click)="submitAllForms()" [disabled]="!validerTousLesFormulaires()">Valider </button></div>
+    
+  </div>
+  </div>
+  
+  
+  
+  </div>
+  </div>
+  <br/><br/>
+  <div class="container">
+    
+      <button  (click)="afficherDonnees()">My projects</button>
+      <div >
+        
+        <div class="card">
+        <div class="card-body">
+        <div class="table-responsive"> 
+          <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort class="table">
+              <!-- Colonne "french" -->
+              <ng-container matColumnDef="french">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> <h3 class='p' >french</h3></th>
+                <td mat-cell *matCellDef="let row"> {{row.french}} </td>
+              </ng-container>
+              <!-- Colonne "moore" -->
+              <ng-container matColumnDef="moore">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> <h3 class='p'>Moore</h3>  </th>
+                <td mat-cell *matCellDef="let row"> {{row.moore}} </td>            
+              </ng-container>
+              
+              <ng-container matColumnDef="date_saisie">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header><h3 class='p'>date</h3></th>
+                <td mat-cell *matCellDef="let row"> {{row.date_saisie | date: 'dd/MM/yyyy'}} </td>            
+              </ng-container>
+  
+              <!-- Associer les colonnes au tableau -->
+              <tr mat-header-row *matHeaderRowDef="['french', 'moore','date_saisie']"></tr>
+              <tr mat-row *matRowDef="let row; columns: ['french', 'moore', 'date_saisie']"></tr>
+            </table>       
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  
+   

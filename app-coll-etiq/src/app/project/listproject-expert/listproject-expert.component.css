@@ -1,0 +1,19 @@
+/* Style pour les boutons */
+button {
+    padding: 6px 12px;
+    background-color: #0463a8;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-right: 4px; /* Ajout de l'espacement entre les boutons */
+  }
+  
+  
+  .p{
+    color: brown;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 130%;
+}
+

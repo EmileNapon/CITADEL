@@ -1,0 +1,28 @@
+.keyboard-button {
+    margin: 2px;
+    font-size: 19px;
+    cursor: pointer;
+  }
+  
+  .keyboard {
+    display: none;
+    /* Ajoutez d'autres styles pour le positionnement et l'apparence */
+  }
+  
+  .keyboard.active {
+    display:inline-flex;
+    grid-template-columns: repeat(1fr, 1); /* Pour un clavier de 3 colonnes */
+    /* Ajoutez d'autres styles pour l'apparence lorsque le clavier est actif */
+  }
+  
+  .keyboard button {
+    width: 24.83px;
+    height: 27px;
+    /* Ajoutez d'autres styles pour les boutons */
+  }
+  
+  .keyboard {
+    position: fixed; /* ou "absolute" selon le besoin */
+    bottom: 1;
+    left: 1;
+}

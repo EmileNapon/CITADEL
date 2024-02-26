@@ -1,0 +1,49 @@
+
+<body class="imgs">
+  
+
+    <div class="boxmarge ">
+        <div class="container" id="container">
+    
+            <div class="form-container sign-in-container">
+                     
+                <form [formGroup]="form" (submit)="submit()">
+                    <input type="string" placeholder="name" name="name" formControlName="name" required />
+                   
+                    <input type="email" placeholder="Email" name="email" formControlName="email" required  />
+                    <input type="password" placeholder="Password" name="password" formControlName="password" required/>
+                    <input type="string" placeholder="User name" name="name" formControlName="name" required />
+                    <br/>
+                    <select id="role" name="role" required class="role-select" formControlName="role"  >
+                        <option value="employer" >worker</option>
+                        <option value="expert">Expert</option>
+                    </select>
+
+                    <br/>
+                    <br/>
+                    <button  type="button"  class="btn btn-success" type="submit">Login</button>
+            
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <button class="ghost" id="signUp">Sécurity Info</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col"></div>
+
+  </body>
+  
+
+
+
+
+  
+
+  
+
+  

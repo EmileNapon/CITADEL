@@ -1,0 +1,35 @@
+
+body:before {
+    content: "";
+    position: fixed;
+    height: 100%; width: 100%;
+     background:url("https://www.dolist.com/wp-content/uploads/2019/09/data_collect.png") ;
+    background-size: cover;
+    z-index: -1; /* Keep the background behind the content */     
+      -webkit-background-size: cover; /* pour Chrome et Safari */
+      -moz-background-size: cover; /* pour Firefox */
+      -o-background-size: cover; /* pour Opera */
+      background-size: cover; /* version standardisée */
+  overflow-x:auto ;
+  overflow-y:auto ;
+ }
+
+.acceuil-alignement{
+    text-align: center;
+}
+
+
+
+
+header{
+    background-color: hwb(0 0% 100%);
+}
+#couleur-vav-link{
+    color: rgb(241, 244, 247);
+    
+ }
+ .bienvenue{
+    text-align: center;
+    padding-top: 100px;
+ }
+
